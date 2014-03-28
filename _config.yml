@@ -1,0 +1,6 @@
+timezone: Asia/Hong_Kong
+
+paginate: 5
+
+sass:
+  style: :compressed
