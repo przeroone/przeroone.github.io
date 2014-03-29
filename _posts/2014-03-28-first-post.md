@@ -1,3 +1,6 @@
+---
+layout: app
+---
 * Michael Jordan
 * Penny Hardaway
 * Penny Hardaway
