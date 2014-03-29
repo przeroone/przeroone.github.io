@@ -4,10 +4,10 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="{{site.url}}/stylesheets/semantic.min.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="{{site.url}}/stylesheets/app.css" media="screen" />
+    <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Nova+Script' rel='stylesheet' type='text/css'>
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -18,21 +18,23 @@
   <body>
     <div class="wrapper-parallax">
       <header>
-        <div id="intro-wrap">
-          <div id="intro">
-            <!--<img id="profile-picture" class="rounded ui image" src="{{site.url}}/images/profile.jpg" alt="This is Alex :)"/>-->
-            <h2 id="intro-text" class="ui header">
-              Alex Au
-              <div class="sub header">A developer</div>
-            </h2>
-          </div>
+        <div id="title">
+          <img id="profile-picture" class="ui avatar image" src="{{site.url}}/images/profile.jpg" alt="This is Alex :)"/>
+          Alex Au
+          <span class="sub">a developer</span>
+        </div>
+        <div class="right">
+          <ul>
+            <li><a href="/">Blog</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
         </div>
       </header>
       <div class="content">
         {{content}}
       </div>
       <footer>
-        <h1>Footer</h1>
+        <p>All right reserved</p>
       </footer>
     </div>
 
