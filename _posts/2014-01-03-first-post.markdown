@@ -1,7 +1,7 @@
 ---
-layout: app
+layout: post
 ---
-# NBA stars
+## NBA stars
 
 * Michael Jordan
 * Penny Hardaway
