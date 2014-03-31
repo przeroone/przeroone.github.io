@@ -8,6 +8,12 @@ layout: app
 <div class="ui segment attached">
   {{content}}
 </div>
-<h4 class="ui bottom attached header">
-  <a href="/"><i class="icon home"></i>Index</a>
-</h4>
+<br />
+{% if page.previous.url %}
+  <a href="{{page.previous.url}}"><i class="large icon left arrow"></i></a>
+{% endif %}
+&nbsp;
+<a href="/"><i class="large icon home"></i></a>
+{% if page.next.url %} 
+  <a href="{{page.next.url}}"><i class="large icon right arrow"></i></a>
+{% endif %}
