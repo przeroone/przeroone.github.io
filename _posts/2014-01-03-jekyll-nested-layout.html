@@ -1,0 +1,43 @@
+---
+layout: post
+---
+<p>First of all, this is the first post of my ever-dreamed personal blog. Congratulations to myself as this is a great step for my developer life! <i class="icon smile"></i></p>
+<p>Back to the topic, this site is powered by <a target="_blank" href="https://pages.github.com/">Github page</a> which in fact uses <a target="_blank" href="http://jekyllrb.com/">Jekyll</a> as the backend engine. I started this blog with little knowledge to Jekyll so I built from scratch and learnt the how-tos of Jekyll step by step.</p>
+<p>One of the most difficult tasks was to layout. I had to do mix-and-match many different pieces of HTML, CSS and Javascripts to make the site possible. How good for me to place these code pieces in a proper location so that future maintenance can be easier? this is a big question to a Jekyll newbie...</p>
+<p>When I came to work out a template of post, I didn't want to have another layout file as I had already a layout file to style other pages e.g. front and about pages. I was hestiated to start a new layout file as this will be duplicating my work on other pages.</p>
+<p>
+  I was stuck a while, thought to apply the exisiting layout (which is app.html) and include head and foot files to make a container to contain the post:
+  <div class="ui instructive segment">
+    ---
+    <br/>
+    layout: app
+    <br/>
+    ---
+    <br/>
+    &#123;% include post_head.md %}
+    <br/>
+    *the post content*
+    <br/>
+    &#123;% include post_foot.md %}
+  </div>
+</p>
+<p><strong>NO LUCK</strong>! I found that this is not permitted as the header include file contains a non-closing div tag.</p>
+<p>I had no choice but to re-think another way.</p>
+<p>
+  From my few-years knowing of <a target="_blank" href="http://rubyonrails.org">Ruby on Rails</a> in which nested layout is possible, I came up with an idea to try it in Jekyll. I created another layout file called post.html, and its front-matter was:
+  <div class="ui instructive segment">
+    <h4>_layout/post.html</h4>
+    ---
+    <br/>
+    layout: app
+    <br/>
+    ---
+    <br/>
+    &lt;div class="post_content"&gt;
+    <br/>
+    &nbsp;&nbsp;*the post content*
+    <br/>
+    &lt;div&gt;
+  </div>
+</p>
+<p>Tested it, it <strong>WORKED</strong> like a charm!</p>
