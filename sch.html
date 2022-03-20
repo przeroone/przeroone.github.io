@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+        <meta http-equiv="refresh" content="76400">
 		<title>紫穎 ZOOM 堂</title>
         <style>
             html, body {
@@ -39,25 +40,52 @@
             }
         </style>
 	</head>
-	<body>
+	<body onload="bear()">
         <div class="flex-container">
             <img src="a.png" width="120px" style="margin-right:20px;margin-top:-70px"/>
             <div class="row">
                 <div class="flex-item">&#9201; 11:20-11:45</div>
                 <div class="flex-item">
-                    <a target="_blank" href="https://us04web.zoom.us/j/7359301188?pwd=27613431">&#x1F5D3; 星期一三 &#x1F448;</a>
+                    <a target="_blank" href="https://us04web.zoom.us/j/7359301188?pwd=27613431">&#x1F5D3; 星期一三 <div id="aPointer">&#x1F448;</div></a>
                 </div>
                 <div class="flex-item">
-                    <a target="_blank" href="https://us04web.zoom.us/j/4089820139?pwd=27613431">&#x1F5D3; 星期二四五 &#x1F448;</a>
+                    <a target="_blank" href="https://us04web.zoom.us/j/4089820139?pwd=27613431">&#x1F5D3; 星期二四五 <div id="bPointer">&#x1F448;</div></a>
                 </div>
-                <div class="flex-item" style="color:white;font-size:2em">
-		    按實之後選擇「用Zoom開啟」
-                </div>
+                <div class="flex-item" style="color:white;font-size:2em" id="clickRemark">按實之後選擇「用Zoom開啟」</div>
                 <div class="flex-item">
                     &nbsp;
                 </div>
             </div>
         </div>
 	</body>
+    <script>
+        function bear() {
+            todayPointer();
+            userAgent();
+        }
+        function userAgent() {
+            const re = /iPad/;
+            var ua = navigator.userAgent;
+            const clickRemark = document.getElementById('clickRemark');
+            clickRemark.style.display = (re.test(ua) ? 'inline' : 'none');
+        }
+        function todayPointer() {
+            const today = new Date();
+            const wd = today.getDay();
+            const a_pointer = document.getElementById('aPointer');
+            const b_pointer = document.getElementById('bPointer');
+            a_pointer.style.display = 'none'; 
+            b_pointer.style.display = 'none'; 
+            switch (wd) {
+                case 1:
+                case 3:
+                    a_pointer.style.display = 'inline'; 
+                    break;
+                case 2:
+                case 4:
+                case 5:
+                    b_pointer.style.display = 'inline'; 
+            }
+        }
+    </script>
 </html>
-
